@@ -8,7 +8,7 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 
 app.get("/",(req,res)=>{
-    res.send("API is runing")
+    res.send("API is runing successfully")
 });
 
 app.get("/api/chat",(req,res)=>{
