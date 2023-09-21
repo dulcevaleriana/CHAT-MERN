@@ -6,7 +6,7 @@ import Chats from "./pages/chats";
 function App() {
   return (
     <Routes>
-        <Route path="/" element={<Homepage />}/>
+        <Route path="/" element={<Homepage />} exact/>
         <Route path="/chats" element={<Chats />}/>
     </Routes>
   );
