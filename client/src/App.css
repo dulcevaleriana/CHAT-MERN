@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+form {
+    width: 100%;
+}
+
+.class-login {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    gap: 20px;
+}
