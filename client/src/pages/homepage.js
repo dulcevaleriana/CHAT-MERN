@@ -1,63 +1,29 @@
-import React, { useState } from "react";
-import {
-  Container,
-  Box,
-  Text,
-  FormControl,
-  FormLabel,
-  Input,
-  FormErrorMessage,
-  FormHelperText,
-  Button,
-} from "@chakra-ui/react";
+import React from "react";
+import { Container, Box, Text } from "@chakra-ui/react";
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import Login from "../components/login";
+import Singup from "../components/singup";
 
 const Homepage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const isErrorEmail = email === "";
-  const isErrorPassword = password === "";
-
   return (
     <Container maxW="xl" centerContent className="class-login">
       <Box>
         <Text>Chat App</Text>
       </Box>
-      <form>
-        <FormControl>
-          <FormLabel>Email address</FormLabel>
-          <Input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          {!isErrorEmail ? (
-            <FormHelperText>Enter your email account.</FormHelperText>
-          ) : (
-            <FormErrorMessage>Email is required.</FormErrorMessage>
-          )}
-        </FormControl>
-        <FormControl>
-          <FormLabel>Password</FormLabel>
-          <Input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          {!isErrorPassword ? (
-            <FormHelperText>Enter your password.</FormHelperText>
-          ) : (
-            <FormErrorMessage>password is required.</FormErrorMessage>
-          )}
-        </FormControl>
-        <Button
-          mt={4}
-          colorScheme="teal"
-          type="submit"
-        >
-          Submit
-        </Button>
-      </form>
+      <Tabs isFitted variant="enclosed" className="class-tabs">
+        <TabList mb="1em">
+          <Tab>Login</Tab>
+          <Tab>Create account</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
+            <Login/>
+          </TabPanel>
+          <TabPanel>
+            <Singup/>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
     </Container>
   );
 };
